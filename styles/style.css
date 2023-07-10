@@ -1,0 +1,58 @@
+@font-face {
+    font-family: ARCADEPIX;
+    src: url('../assets/fonts/arcadepix/ARCADEPI.TTF');
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'ARCADEPIX', sans-serif;
+}
+
+div.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+#welcome-text-appear {
+    animation: apparition 2s step(50) linear;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes apparition {
+    100% {
+        opacity: 1;
+    }
+}
+
+.crt-effect {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url('../assets/img/crt-texture.png');
+    background-color: rgba(0, 0, 0, 0.9);
+    background-blend-mode: multiply;
+}
+
+@keyframes crt-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 10px);
+    }
+}
