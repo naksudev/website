@@ -61,6 +61,8 @@ function handleCommand(command) {
         case "disk disable 1":
             diskData[1].status = "Offline";
             diskData[1].usage = "Unknown";
+            output.innerHTML += "<br>";
+            output.innerHTML += "This disk has been disabled"
             break;
         case "disk enable 1":
             if (diskData[1].status === "Online") {
