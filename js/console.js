@@ -11,7 +11,7 @@ var diskData = [{
         name: "backup159",
         usage: "Unknown",
         status: "Offline"
-    },
+    }
 ];
 
 consoleInput.addEventListener("keydown", function (event) {
@@ -58,13 +58,17 @@ function handleCommand(command) {
             output.innerHTML += "<br>";
             output.innerHTML += "This disk is already running";
             break;
+        case "disk disable 1":
+            diskData[1].status = "Offline";
+            diskData[1].usage = "Unknown";
+            break;
         case "disk enable 1":
             if (diskData[1].status === "Online") {
                 output.innerHTML += "<br>";
                 output.innerHTML += "This disk is already running"
             } else {
                 diskData[1].status = "Online";
-                diskData[1].usage = "";
+                diskData[1].usage = "128KO/128KO";
                 output.innerHTML += "<br>";
                 output.innerHTML += "<span class='enabled'>Disk backup159 enabled</span>";
             };
@@ -101,7 +105,7 @@ function handleCommand(command) {
             break;
         case "enfoldlight":
             output.innerHTML += "<br>";
-            output.innerHTML += "Program not fully restored - 0%"
+            output.innerHTML += "Program not fully restored - 0%";
             break;
         default:
             output.innerHTML += "<br>Command not found";
