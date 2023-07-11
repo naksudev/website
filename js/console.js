@@ -104,8 +104,14 @@ function handleCommand(command) {
             };
             break;
         case "enfoldlight":
-            output.innerHTML += "<br>";
-            output.innerHTML += "Program not fully restored - 0%";
+            if (diskData[1].status === "Online") {
+                output.innerHTML += "<br>";
+                prompt("Enter the key to run the program");
+                output.innerHTML += "Failed to run the program, the key is invalid.";
+            } else {
+                output.innerHTML += "<br>";
+                output.innerHTML += "<br>Command not found";
+            }
             break;
         default:
             output.innerHTML += "<br>Command not found";
