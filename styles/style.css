@@ -1,6 +1,6 @@
 @font-face {
     font-family: ARCADEPIX;
-    src: url('../assets/fonts/arcadepix/ARCADEPI.TTF');
+    src: url('../assets/fonts/ARCADEPI.TTF');
 }
 
 body {
@@ -21,7 +21,6 @@ div.welcome {
     z-index: 1;
 }
 
-
 #welcome-text-appear {
     animation: apparition 2s step(50) linear;
     white-space: nowrap;
@@ -33,6 +32,8 @@ div.welcome {
         opacity: 1;
     }
 }
+
+/* /console.html */
 
 .crt-effect {
     width: 100%;

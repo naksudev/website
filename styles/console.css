@@ -1,0 +1,57 @@
+@font-face {
+    font-family: PIXELOIDSANS;
+    src: url('../assets/fonts/PixeloidSans.ttf');
+}
+
+body {
+    background-color: black;
+    color: #ffffff;
+    font-family: 'PIXELOIDSANS';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.console {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.prompt {
+    color: #ffffff;
+    font-weight: 1;
+    margin-right: 5px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    flex-grow: 1;
+}
+
+.output {
+    color: gray;
+}
+
+.crt-effect {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url('../assets/img/crt-texture.png');
+    background-color: rgba(0, 0, 0, 0.9);
+    background-blend-mode: multiply;
+}
