@@ -41,10 +41,49 @@ body {
     flex-grow: 1;
 }
 
+.command {
+    color: white;
+}
+
 .output {
     color: gray;
 }
 
+/* DISK LIST COMMANDS */
+span.disk-id {
+    color: cyan;
+}
+
+span.disk-name {
+    color: magenta;
+}
+
+span.disk-usage {
+    color: orange;
+}
+
+span.disk-status {
+    color: blue;
+}
+
+span.enabled {
+    color: lime;
+}
+
+span.success-protocol {
+    color: cyan;
+}
+
+/* ENFOLD LIGHT MISSION */
+.enfoldlight-mission {
+    color: teal;
+}
+
+span.enfoldlight {
+    color: red;
+}
+
+/* CRT EFFECT */
 .crt-effect {
     width: 100%;
     min-height: 100%;
