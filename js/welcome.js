@@ -1,14 +1,49 @@
-const text = "WELCOME.";
+const normalText = "WELCOME.";
+let subliminalText = "";
+
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(data => {
+    subliminalText = data.ip;
+  })
+  .catch(error => {
+    subliminalText = "I'M ENDLESS.";
+  });
 
 const pElement = document.getElementById("welcome-text-appear");
-let index = 0;
+let isNormal = true;
+
+function toggleText() {
+  if (isNormal) {
+    pElement.textContent = subliminalText;
+    pElement.style.color = "red";
+    const randomDelayHIDE = Math.floor(Math.random() * (100 - 200 + 1)) + 200; // Délai aléatoire entre 10000 et 20000
+    setTimeout(toggleText, randomDelayHIDE)
+  } else {
+    pElement.textContent = normalText;
+    pElement.style.color = "";
+    const randomDelay = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000; // Délai aléatoire entre 10000 et 20000
+    setTimeout(toggleText, randomDelay)
+  }
+
+  isNormal = !isNormal;
+}
 
 function write() {
-  if (index < text.length) {
-    pElement.textContent += text.charAt(index);
-    index++;
-    setTimeout(write, 100); // Délai entre chaque caractère (ajustez selon vos besoins)
+  const text = "WELCOME.";
+  let index = 0;
+
+  function updateText() {
+    if (index < text.length) {
+      pElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(updateText, 100); // Délai entre chaque caractère (ajustez selon vos besoins)
+    } else {
+      setTimeout(toggleText, 10000); // Délai avant le changement du message subliminal
+    }
   }
+
+  updateText();
 }
 
 write();
