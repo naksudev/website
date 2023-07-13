@@ -49,6 +49,11 @@ body {
     color: gray;
 }
 
+/* [[YOU CAN'T DO ANYTHING]] */
+span.youdontneedtoknow {
+    color: red;
+}
+
 /* DISK LIST COMMANDS */
 span.disk-id {
     color: cyan;
@@ -70,17 +75,21 @@ span.enabled {
     color: lime;
 }
 
-span.success-protocol {
-    color: cyan;
+span.protocol {
+    color: orange;
 }
 
 /* ENFOLD LIGHT MISSION */
-.enfoldlight-mission {
-    color: teal;
+span.enfoldlight-mission {
+    color: purple;
+}
+
+span.mission {
+    color : plum;
 }
 
 span.enfoldlight {
-    color: red;
+    color: purple;
 }
 
 /* CRT EFFECT */
