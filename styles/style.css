@@ -7,7 +7,7 @@ body {
     height: 100%;
     margin: 0;
     background-color: black;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.8);
     font-family: 'ARCADEPIX', sans-serif;
 }
 
@@ -27,12 +27,6 @@ div.welcome {
     overflow: hidden;
 }
 
-@keyframes apparition {
-    100% {
-        opacity: 1;
-    }
-}
-
 /* /console.html */
 
 .crt-effect {
@@ -47,14 +41,3 @@ div.welcome {
     background-color: rgba(0, 0, 0, 0.9);
     background-blend-mode: multiply;
 }
-
-@keyframes crt-animation {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(0, 10px);
-    }
-}
-

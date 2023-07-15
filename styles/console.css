@@ -92,6 +92,14 @@ span.enfoldlight {
     color: purple;
 }
 
+span.thereishope {
+    color: cyan;
+}
+
+span.white {
+    color: white;
+}
+
 /* CRT EFFECT */
 .crt-effect {
     width: 100%;
