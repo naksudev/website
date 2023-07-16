@@ -7,7 +7,7 @@ fetch("https://api.ipify.org?format=json")
     subliminalText = data.ip;
   })
   .catch(error => {
-    subliminalText = "I'M ENDLESS.";
+    subliminalText = "[[I'M ENDLESS.]]";
   });
 
 const pElement = document.getElementById("welcome-text-appear");
