@@ -22,6 +22,7 @@ div.welcome {
 }
 
 #welcome-text-appear {
+    z-index: 0;
     animation: apparition 2s step(50) linear;
     white-space: nowrap;
     overflow: hidden;
@@ -39,5 +40,18 @@ div.welcome {
     pointer-events: none;
     background-image: url('../assets/img/crt-texture.png');
     background-color: rgba(0, 0, 0, 0.9);
-    background-blend-mode: multiply;
+    background-blend-mode: color;
+}
+
+.crt-effect-error {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url('../assets/img/crt-texture.png');
+    background-color: rgb(49, 0, 0);
+    background-blend-mode: darken;
 }
