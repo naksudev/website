@@ -1,16 +1,58 @@
 ---
+import Base from '../layouts/Base.astro';
 
+const pageTitle = "NAKSU(U)'S WEBSITE"
 ---
+<Base pageTitle={pageTitle}>
+	<h1>HEY, WELCOME TO MY <span class="cool-effect">WEBSITE!</span></h1>
+	<p>There's nothing here, you can leave now.</p>
+</Base>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<style>
+	span.cool-effect {
+		animation: rainbow 20s linear;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes rainbow{
+			0%{
+				color: rgb(255,0,0);
+			}
+			8%{
+				color: rgb(255,127,0);
+			}
+			16%{
+				color: rgb(255,255,0);
+			}
+			25%{
+				color: rgb(127,255,0);
+			}
+			33%{
+				color: rgb(0,255,0);
+			}
+			41%{
+				color: rgb(0,255,127);
+			}
+			50%{
+				color: rgb(0,255,255);
+			}
+			58%{
+				color: rgb(0,127,255);
+			}
+			66%{
+				color: rgb(0,0,255);
+			}
+			75%{
+				color: rgb(127,0,255);
+			}
+			83%{
+				color: rgb(255,0,255);
+			}
+			91%{
+				color: rgb(255,0,127);
+			}
+			100%{
+				color: rgb(255,0,0);
+			}
+	}
+</style>
