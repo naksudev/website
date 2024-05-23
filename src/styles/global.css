@@ -3,12 +3,12 @@
 }
 
 @font-face {
-	font-family: "PIXEAB__";
+	font-family: "CyberpunkWaifus";
 	src: url('/fonts/CyberpunkWaifus.ttf');
 }
 
 * {
-	font-family: "PIXEAB__", system-ui;
+	font-family: "CyberpunkWaifus", system-ui;
 }
 
 html,body {
