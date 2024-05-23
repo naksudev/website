@@ -1,0 +1,49 @@
+:root {
+	--bg: #000000;
+}
+
+@font-face {
+	font-family: "PIXEAB__";
+	src: url('/fonts/CyberpunkWaifus.ttf');
+}
+
+* {
+	font-family: "PIXEAB__", system-ui;
+}
+
+html,body {
+	background-color: var(--bg);
+	min-height: 100%;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	line-height: 1.5;
+	display: felx;
+	flex-direction: column;
+}
+
+/* I said there's nothing, leave now. */
+
+.wrapper {
+	width: 100%;
+	max-width: 64rem;
+	text-align: center;
+	color: #fff;
+}
+
+:where(h1, h2, h3, h4, p, hr) {
+	margin: 0;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: #131313;
+	margin-bottom: 1rem;
+	text-align: center;
+}
