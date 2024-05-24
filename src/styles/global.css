@@ -22,7 +22,7 @@ html,body {
 
 body {
 	line-height: 1.5;
-	display: felx;
+	display: flex;
 	flex-direction: column;
 }
 
