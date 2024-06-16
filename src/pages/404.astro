@@ -13,7 +13,7 @@ const pageTitle = "404 ERROR"
 	<p>Take the door to go back at the homepage.</p>
 	<div>
 		<a href="/"><Image id="exitDoorImage" src={exitDoor} alt="An exit door to the homepage" /></a>
-		<a href="#in-wip"><Image id="easterEggDoor" src={easterEggDoor} alt="An exit door to the homepage" /></a>
+		<a href="esper"><Image id="easterEggDoor" src={easterEggDoor} alt="An exit door to the homepage" /></a>
 	</div>
 </Base>
 
@@ -40,10 +40,6 @@ const pageTitle = "404 ERROR"
 			event.preventDefault(); 
 			exitDoorImage.style.display = 'none'; 
 			easterEggDoor.style.display = 'inline-flex'; 
-		});
-
-		easterEggDoor.addEventListener('click', function() {
-			alert("Good job! Unfortunately, the easter egg is still in W.I.P. Come back later.");
 		});
 	});
 </script>
