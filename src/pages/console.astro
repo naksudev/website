@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+
+const pageTitle = "CONSOLE";
+---
+<Base pageTitle={pageTitle}>
+	<p>Starting ARIA-DOS...</p>
+	<br>
+	<p>Welcome ARIA.</p>
+	<p>System is healthy.</p>
+</Base>
+
+<style is:global>
+	html, body {
+		align-items: baseline;
+		justify-content: left;
+		margin: 1rem;
+	}
+
+	footer {
+		display: none;
+	}
+
+	p {
+		text-align: left;
+		font-size: 16px;
+		color: white;
+		font-weight: 500;
+	}
+
+	.obfuscation {
+    font-size: 2rem;
+	}
+</style>
+
