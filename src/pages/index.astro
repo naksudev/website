@@ -1,14 +1,37 @@
 ---
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
 
 const pageTitle = "HOMEPAGE";
 ---
 <Base pageTitle={pageTitle}>
-	<h1>HEY, WELCOME TO MY <span class="cool-effect">WEBSITE!</span></h1>
-	<p>There's nothing here, you can leave now.</p>
+	<div>
+		<Image src="/assets/cute_cat.png" class="cute-cat" alt="A cute cat" width="128" height="128" />
+		<div class="h-line"></div>
+
+		<h1>HEY, WELCOME TO MY <span class="cool-effect">WEBSITE!</span></h1>
+		<p>There's nothing here, you can leave now..</p>
+	</div>
 </Base>
 
 <style>
+	.cute-cat {
+		margin-bottom: -0.50em;
+		z-index: -999;
+	}
+
+	.cute-cat:hover {
+		filter: hue-rotate(240deg);
+	}
+
+	.h-line {
+		border-top: 1px solid white;
+		z-index: 999;
+		width: 40%;
+		margin: 0 auto;
+		margin-bottom: 0.60em;
+	}
+
 	span.cool-effect {
 		animation: rainbow 20s linear;
 		animation-iteration-count: infinite;
