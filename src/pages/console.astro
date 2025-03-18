@@ -1,19 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const pageTitle = "ARIA-DOS";
+const pageTitle = "ARIA-OS";
 ---
 <Base pageTitle={pageTitle}>
 	<div id="output-console">
-		<p>Starting ARIA-DOS...</p>
+		<p>ARIA-OS 0.167.2</p>
 		<br>
-		<p>Welcome GUEST.</p>
-		<p>Please login to continue...</p>
+		<p>Please <span style="color: aqua;">login</span> to continue...</p>
 	</div>
 
 	<div id="input-console">
 		<p id="prompt">$ </p>
-		<input type="text" id="user-input" size="96" autofocus >
+		<input type="text" id="user-input" maxlength="64" autofocus />
 	</div>
 </Base>
 
@@ -22,6 +21,7 @@ const pageTitle = "ARIA-DOS";
 		align-items: baseline;
 		justify-content: left;
 		margin: 1rem;
+		max-wdith: 100%;
 		min-width: 100%;
 	}
 
@@ -31,7 +31,7 @@ const pageTitle = "ARIA-DOS";
 
 	p {
 		text-align: left;
-		font-size: 24px;
+		font-size: 1.5rem;
 		color: white;
 		font-weight: 500;
 	}
@@ -46,17 +46,32 @@ const pageTitle = "ARIA-DOS";
 		margin-right: 12px;
 	}
 
+	div#output-console > p {
+		max-width: 100%;
+	}
+
 	input {
 		background-color: transparent;
 		border: none;
 		outline: none;
 		color: white;
-		font-size: 24px;
+		font-size: 1.5rem;
 		margin-left: -2px;
+		min-width: 100%;
 	}
 
-	.aria-prompt {
-		color: purple;
+	.naksu-prompt {
+		color: red;
+	}
+
+	@media only screen and (max-width: 640px) {
+		html, body {
+			max-width: 100%;
+		}
+
+		p, input {
+			font-size: 1rem;
+		}
 	}
 </style>
 
@@ -71,6 +86,5 @@ const pageTitle = "ARIA-DOS";
 			consoleInput.value = "";
 		}
 	});
-
 </script>
 

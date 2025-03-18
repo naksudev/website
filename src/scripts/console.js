@@ -11,7 +11,7 @@ function handleCommand(command) {
 	const output = document.createElement("div");
 
 	if (loggedIn === true) {
-		output.innerHTML = `<p class="aria-prompt">$ ${command}</p>`;
+		output.innerHTML = `<p class="naksu-prompt">$ ${command}</p>`;
 		consoleOutput.appendChild(output);
 
 		switch(command) {
@@ -29,9 +29,9 @@ function handleCommand(command) {
 		switch(command) {
 			case "login":
 				loggedIn = true;
-				output.innerHTML += `<p>Welcome back, ARIA.</p>`;
-				consolePrompt.classList.add("aria-prompt");
-				consoleInput.classList.add("aria-prompt");
+				output.innerHTML += `<p>Welcome back, <span style="color: red;">NAKSU</span>.</p>`;
+				consolePrompt.classList.add("naksu-prompt");
+				consoleInput.classList.add("naksu-prompt");
 				break;
 			case "help":
 				output.innerHTML += `<p>Use the login command to login with your account.</p>`;
