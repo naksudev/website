@@ -1,19 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const pageTitle = "ARIA-DOS";
+const pageTitle = "ARIA-OS";
 ---
 <Base pageTitle={pageTitle}>
 	<div id="output-console">
-		<p>Starting ARIA-DOS...</p>
+		<p>ARIA-OS 0.167.2</p>
 		<br>
-		<p>Welcome GUEST.</p>
-		<p>Please login to continue...</p>
+		<p>Please <span style="color: aqua;">login</span> to continue...</p>
 	</div>
 
 	<div id="input-console">
 		<p id="prompt">$ </p>
-		<input type="text" id="user-input" size="96" autofocus >
+		<input type="text" id="user-input" maxlength="64" autofocus />
 	</div>
 </Base>
 
@@ -22,6 +21,7 @@ const pageTitle = "ARIA-DOS";
 		align-items: baseline;
 		justify-content: left;
 		margin: 1rem;
+		max-wdith: 100%;
 		min-width: 100%;
 	}
 
@@ -31,7 +31,7 @@ const pageTitle = "ARIA-DOS";
 
 	p {
 		text-align: left;
-		font-size: 24px;
+		font-size: 1.5rem;
 		color: white;
 		font-weight: 500;
 	}
@@ -40,10 +40,15 @@ const pageTitle = "ARIA-DOS";
 		display: flex;
 		flex-direction: row;
 		margin-top: 4px;
+		min-width: 100%;
 	}
 
 	div#input-console > p {
 		margin-right: 12px;
+	}
+
+	div#output-console > p {
+		max-width: 100%;
 	}
 
 	input {
@@ -51,22 +56,26 @@ const pageTitle = "ARIA-DOS";
 		border: none;
 		outline: none;
 		color: white;
-		font-size: 24px;
+		font-size: 1.5rem;
 		margin-left: -2px;
+		min-width: 100%;
 	}
 
-	.aria-prompt {
-		color: purple;
+	@media only screen and (max-width: 640px) {
+		html, body {
+			max-width: 100%;
+		}
+
+		p, input {
+			font-size: 1rem;
+		}
 	}
 </style>
 
 
 <script>
-	const consoleOutput = document.getElementById("output-console");
-	const consoleInput = document.getElementById("user-input");
-	const consolePrompt = document.getElementById("prompt");
-	var loggedIn = false;
-
+	import { handleCommand, consoleInput } from '../scripts/console.js';
+	
 	consoleInput.addEventListener("keydown", function(event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
@@ -74,47 +83,5 @@ const pageTitle = "ARIA-DOS";
 			consoleInput.value = "";
 		}
 	});
-
-	function scrollToBottom() {
-    document.documentElement.scrollTop = document.documentElement.scrollHeight;
-	}
-
-	function handleCommand(command) {
-		const output = document.createElement("div");
-
-		if (loggedIn === true) {
-			output.innerHTML = `<p class="aria-prompt">$ ${command}</p>`;
-			consoleOutput.appendChild(output);
-
-			switch(command) {
-				case "help":
-					output.innerHTML += `<p style="color: yellow;">EASTER EGG STILL IN W.I.P.</p>`;
-					break;
-				default:
-					output.innerHTML += `<p>Command not found.</p>`;
-					break;
-			}
-		} else {
-			output.innerHTML = `<p>$ ${command}</p>`;
-			consoleOutput.appendChild(output);
-
-			switch(command) {
-				case "login":
-					loggedIn = true;
-					output.innerHTML += `<p>Welcome back, ARIA.</p>`;
-					consolePrompt.classList.add("aria-prompt");
-					consoleInput.classList.add("aria-prompt");
-					break;
-				case "help":
-					output.innerHTML += `<p>Use the login command to login with your account.</p>`;
-					break;
-				default:
-					output.innerHTML += `<p>Command not found.</p>`;
-					break;
-			}
-		}
-
-		scrollToBottom();
-	}
 </script>
 

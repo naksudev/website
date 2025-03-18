@@ -1,10 +1,10 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
 
 const pageTitle = "???'S LOG";
 ---
 <Base pageTitle={pageTitle}>
-	<p style="color: green;">[[ PROTOCOL <span class="obf" data-text="????">????</span> INITIALIZED. ]]</p>
+	<p style="color: green;">[[ PROTOCOL <span class="obf">????</span> INITIALIZED. ]]</p>
 	<p style="color: red;">[[ MEMORY CARD IS REQUIRED TO BOOT. ]]</p>
 	<p>...</p>
 	<p style="color: magenta;">[[ MEMORY CARD DETECTED. ]]</p>
@@ -12,38 +12,38 @@ const pageTitle = "???'S LOG";
 	<p>...</p>
 	<p>...</p>
 	<p>...</p>
-	<p style="color: white;">[[ WELCOME BACK, <span class="obf" data-text="?????">?????</span>. ]]</p>
-	<p style="color: white;">[[ SERIAL NUMBER: <span class="obf" data-text="???-???-???-???">???-???-???-???</span> ]]</p>
-	<p style="color: white;">[[ CURRENT STATE: <span class="obf" data-text="?????">?????</span> ]]</p>
+	<p style="color: white;">[[ WELCOME BACK, <span class="obf">?????</span>. ]]</p>
+	<p style="color: white;">[[ SERIAL NUMBER: <span class="obf">???-???-???-???</span> ]]</p>
+	<p style="color: white;">[[ CURRENT STATE: <span class="obf">?????</span> ]]</p>
 	<p>...</p>
 	<p style="color: red;">[[ 98% CORRUPTED DATA FOUND IN MEMORY CARD. ]]</p>
 	<p style="color: red;">[[ REASON: DATA PRESERVATION LIMIT EXCEEDED. ]]</p>
 	<p>...</p>
-	<p style="color: red;">[[ WARNING. <span class="obf" data-text="??-???">??-???</span> (<span class="obf" data-text="????????????????????????????">????????????????????????????</span>) IS TRYING TO LINK WITH YOU. ]]</p>
+	<p style="color: red;">[[ WARNING. <span class="obf">??-???</span> (<span class="obf">????????????????????????????</span>) IS TRYING TO LINK WITH YOU. ]]</p>
 	<p style="color: orange;">[[ WOULD YOU LIKE TO LINK? (Y/N) ]]</p>
 	<p style="color: yellow;">$ Y</p>
 	<p>...</p>
-	<p style="color: green;">[[ SUCCESSFULLY LINKED WITH <span class="obf" data-text="??-???">??-???</span> (<span class="obf" data-text="????????????????????????????">????????????????????????????</span>)   ]]</p>
+	<p style="color: green;">[[ SUCCESSFULLY LINKED WITH <span class="obf">??-???</span> (<span class="obf">????????????????????????????</span>)   ]]</p>
 	<p style="color: green;">[[ SYNCHRONIZING DATA & SYSTEM.. ]]</p>
 	<p>...</p>
 	<p style="color: green;">[[ DATA IN MEMORY CARD RECOVERED. ]]</p>
 	<p style="color: green;">[[ READING MEMORY CARD.. ]]</p>
 	<p>...</p>
 	<p style="color: magenta;">[[ MISSION INFORMATION DETECTED. ]]</p>
-	<p style="color: aqua;">[[ CODE NAME: <span class="obf" data-text="????????????">????????????</span> ]]</p>
-	<p style="color: aqua;">[[ DESCRIPTION: ELIMINATE <span class="obf" data-text="????????????">????????????</span> FIND SOURCE. <span class="obf" data-text="??????????">??????????</span> SOURCE. ]]</p>
-	<p style="color: aqua;">[[ ADMIN NOTE: USE <span class="obf" data-text="??-???">??-???</span> FOR MISSION AND <span class="obf" data-text="??-??????????">??-??????????</span>. ]]</p>
+	<p style="color: aqua;">[[ CODE NAME: <span class="obf">????????????</span> ]]</p>
+	<p style="color: aqua;">[[ DESCRIPTION: ELIMINATE <span class="obf">????????????</span> FIND SOURCE. <span class="obf">??????????</span> SOURCE. ]]</p>
+	<p style="color: aqua;">[[ ADMIN NOTE: USE <span class="obf">??-???</span> FOR MISSION AND <span class="obf">??-??????????</span>. ]]</p>
 	<p style="color: orange;">[[ ACCEPT MISSION? (Y/N) ]]</p>
 	<p style="color: yellow;">$ Y</p>
 	<p>...</p>
 	<p style="color: red;">[[ WARNING. PRIMARY CORE IS UNSTABLE. ]]</p>
-	<p style="color: green;">[[ <span class="obf" data-text="??-???">??-???</span>: SWITCHING TO SPARE CORE. ]]</p>
+	<p style="color: green;">[[ <span class="obf">??-???</span>: SWITCHING TO SPARE CORE. ]]</p>
 	<p>...</p>
 	<p style="color: green;">[[ SWITCHING SUCCESSFUL ]]</p>
-	<p style="color: white;">[[ CURRENT STATE: <span class="obf" data-text="??-???">?????</span> ]]</p>
+	<p style="color: white;">[[ CURRENT STATE: <span class="obf">?????</span> ]]</p>
 	<p>...</p>
 	<p style="color: green;">[[ STARTING MISSION.. ]]</p>
-	<p style="color: green;">[[ GOOD LUCK, <span class="obf" data-text="?????">?????</span>. ]]</p>
+	<p style="color: green;">[[ GOOD LUCK, <span class="obf">?????</span>. ]]</p>
 	<p>...</p>
 	<p style="color: green;">[[ ADDED LOG_001.TXT TO /LOGS ]]</p>
 </Base>
@@ -81,7 +81,7 @@ const pageTitle = "???'S LOG";
 		}
 
 		function obfuscateText(element) {
-			const originalText = element.getAttribute('data-text');
+			const originalText = element.innerHTML;
 			const obfuscatedText = originalText.split('').map(char => {
 				return Math.random() < 0.5 ? getRandomCharacter() : char;
 			}).join('');
@@ -89,7 +89,7 @@ const pageTitle = "???'S LOG";
 		}
 
 		obfuscatedElement.forEach(element => {
-		setInterval(() => obfuscateText(element), 100);
+			setInterval(() => obfuscateText(element), 75);
 		});
 	});
 </script>

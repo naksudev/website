@@ -11,19 +11,25 @@ const pageTitle = "404 ERROR";
 	<h1>ERROR 404</h1>
 	<p>Oops. Sorry for that.</p>
 	<p>Take the door to go back at the homepage.</p>
+
 	<div>
 		<a href="/"><Image id="exitDoorImage" src={exitDoor} alt="An exit door to the homepage" /></a>
-		<a href="esper"><Image id="easterEggDoor" src={easterEggDoor} alt="A door." /></a>
+		<a href=""><Image id="easterEggDoor" src={easterEggDoor} alt="A door." /></a>
 	</div>
 </Base>
 
 <style>
 	h1 {
 		color: red;
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1rem;
 	}
 
 	img {
-		margin-top: 1rem;
+		margin-top: 1.5rem;
 	}
 
 	img#easterEggDoor {
@@ -38,8 +44,21 @@ const pageTitle = "404 ERROR";
 
 		exitDoorImage.addEventListener('contextmenu', function(event) {
 			event.preventDefault(); 
-			exitDoorImage.style.display = 'none'; 
+			exitDoorImage.style.display = 'none';
 			easterEggDoor.style.display = 'inline-flex'; 
+		});
+
+		easterEggDoor.addEventListener('click', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+			let keyOfConsole = prompt("Enter a key.");
+
+			if (keyOfConsole === '263246215859142656') {
+				window.location.href = './console';
+			} else {
+				alert("Wrong key");
+			}
 		});
 	});
 </script>
