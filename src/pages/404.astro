@@ -44,15 +44,21 @@ const pageTitle = "404 ERROR";
 
 		exitDoorImage.addEventListener('contextmenu', function(event) {
 			event.preventDefault(); 
-			exitDoorImage.style.display = 'none'; 
+			exitDoorImage.style.display = 'none';
 			easterEggDoor.style.display = 'inline-flex'; 
 		});
 
-		easterEggDoor.addEventListener('mousedown', function() {
+		easterEggDoor.addEventListener('click', function(event) {
 			event.preventDefault();
+			event.stopPropagation();
 
-			/* TODO: Ask for a key instead of an alert. */
-			alert("huh?");
+			let keyOfConsole = prompt("Enter a key.");
+
+			if (keyOfConsole === '263246215859142656') {
+				window.location.href = './console';
+			} else {
+				alert("Wrong key");
+			}
 		});
 	});
 </script>

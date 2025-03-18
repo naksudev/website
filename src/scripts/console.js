@@ -11,7 +11,7 @@ function handleCommand(command) {
 	const output = document.createElement("div");
 
 	if (loggedIn === true) {
-		output.innerHTML = `<p class="naksu-prompt">$ ${command}</p>`;
+		output.innerHTML = `<p>${consolePrompt.innerHTML} ${command}</p>`;
 		consoleOutput.appendChild(output);
 
 		switch(command) {
@@ -23,18 +23,17 @@ function handleCommand(command) {
 				break;
 		}
 	} else {
-		output.innerHTML = `<p>$ ${command}</p>`;
+		output.innerHTML = `<p>${consolePrompt.innerHTML} ${command}</p>`;
 		consoleOutput.appendChild(output);
 
 		switch(command) {
 			case "login":
 				loggedIn = true;
 				output.innerHTML += `<p>Welcome back, <span style="color: red;">NAKSU</span>.</p>`;
-				consolePrompt.classList.add("naksu-prompt");
-				consoleInput.classList.add("naksu-prompt");
+				consolePrompt.innerHTML = `# `;
 				break;
 			case "help":
-				output.innerHTML += `<p>Use the login command to login with your account.</p>`;
+				output.innerHTML += `<p style="color: yellow;">EASTER EGG STILL IN W.I.P.</p>`;
 				break;
 			default:
 				output.innerHTML += `<p>Command not found.</p>`;
