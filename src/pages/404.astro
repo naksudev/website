@@ -38,6 +38,7 @@ const pageTitle = "404 ERROR";
 </style>
 
 <script>
+
 	document.addEventListener('DOMContentLoaded', function() {
 		const exitDoorImage = document.getElementById('exitDoorImage');
 		const easterEggDoor = document.getElementById('easterEggDoor');
@@ -52,9 +53,10 @@ const pageTitle = "404 ERROR";
 			event.preventDefault();
 			event.stopPropagation();
 
+			const key = import.meta.env.VITE_EASTEREGG;
 			let keyOfConsole = prompt("Enter a key.");
 
-			if (keyOfConsole === '263246215859142656') {
+			if (keyOfConsole === key) {
 				window.location.href = './console';
 			} else {
 				alert("Wrong key");
