@@ -53,7 +53,7 @@ const pageTitle = "404 ERROR";
 			event.preventDefault();
 			event.stopPropagation();
 
-			const key = process.env.DOORKEY;
+			const key = import.meta.env.PUBLIC_DOORKEY;
 			let keyOfConsole = prompt("Enter a key.");
 
 			if (keyOfConsole === key) {
