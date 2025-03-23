@@ -1,3 +1,4 @@
+// TODO: Find a better way to handle commands
 const consoleOutput = document.getElementById("output-console");
 const consoleInput = document.getElementById("user-input");
 const consolePrompt = document.getElementById("prompt");
