@@ -1,7 +1,13 @@
 ---
+export const prerender = false;
 import Base from '../layouts/Base.astro';
 
 const pageTitle = "ARIA-OS";
+
+const cookies = Astro.request.headers.get('cookie');
+const hasAccess = cookies && cookies.includes('access-granted=true');
+
+if (!hasAccess) return Astro.redirect('/404');
 ---
 <Base pageTitle={pageTitle}>
 	<div id="output-console">
