@@ -45,3 +45,4 @@ function handleCommand(command) {
 }
 
 export { handleCommand, consoleInput };
+

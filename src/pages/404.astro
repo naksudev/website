@@ -2,8 +2,6 @@
 import Base from '../layouts/Base.astro';
 
 import { Image } from 'astro:assets';
-import exitDoor from '../assets/exit-door.png';
-import easterEggDoor from '../assets/easteregg-door.png';
 
 const pageTitle = "404 ERROR";
 ---
@@ -13,8 +11,8 @@ const pageTitle = "404 ERROR";
 	<p>Take the door to go back at the homepage.</p>
 
 	<div>
-		<a href="/"><Image id="exitDoorImage" src={exitDoor} alt="An exit door to the homepage" /></a>
-		<a href=""><Image id="easterEggDoor" src={easterEggDoor} alt="A door." /></a>
+		<a href="/"><img src="/img/exit-door.png" id="exitDoorImage" alt="An exit door to the homepage" /></a>
+		<a href=""><img src="/img/easteregg-door.png" id="easterEggDoor" alt="A door." /></a>
 	</div>
 </Base>
 
@@ -38,7 +36,6 @@ const pageTitle = "404 ERROR";
 </style>
 
 <script>
-
 	document.addEventListener('DOMContentLoaded', function() {
 		const exitDoorImage = document.getElementById('exitDoorImage');
 		const easterEggDoor = document.getElementById('easterEggDoor');
@@ -50,16 +47,25 @@ const pageTitle = "404 ERROR";
 		});
 
 		easterEggDoor.addEventListener('click', function(event) {
+			const keyPrompt = prompt("Enter the key.");
+
 			event.preventDefault();
 			event.stopPropagation();
 
-			const key = import.meta.env.PUBLIC_DOORKEY;
-			let keyOfConsole = prompt("Enter a key.");
-
-			if (keyOfConsole === key) {
-				window.location.href = './console';
-			} else {
-				alert("Wrong key");
+			if (keyPrompt) {
+				fetch(`/api/verify-key?key=${keyPrompt}`)
+					.then((response) => response.json())
+					.then((data) => {
+						if (data.success) {
+							localStorage.setItem('doorKey', keyPrompt)
+							window.location.href = './console';
+						} else {
+							alert("Wrong key.");
+						}
+					})
+					.catch((e) => {
+						alert(`Uh oh. Looks like we have a problem here. Send the error to @naksufr on Discord. \n\nERROR: ${e}`);
+					});
 			}
 		});
 	});
